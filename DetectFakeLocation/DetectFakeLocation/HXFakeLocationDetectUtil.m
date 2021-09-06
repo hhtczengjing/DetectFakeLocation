@@ -80,11 +80,11 @@ static void hook_exchangeMethod(Class originalClass, SEL originalSel, Class repl
 
 - (BOOL)isSuspecious {
     HXFakeLocationDetectUtil *util = [HXFakeLocationDetectUtil util];
-    
-    return util.isSuspeciousJail ||
-        util.isSuspeciousAltitue ||
+    return util.isSuspeciousAltitue && util.isSuspeciousType;
+//    return util.isSuspeciousJail ||
+//        util.isSuspeciousAltitue ||
 //      util.isSuspeciousCallbackCount ||
-        util.isSuspeciousType;
+//        util.isSuspeciousType;
 }
 
 - (void)hx_startUpdatingLocation {
